@@ -1,0 +1,44 @@
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    scale: 1;
+  }
+  50% {
+    opacity: 0.8;
+    scale: 0.98;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+.loader__icon {
+  width: 100%;
+  max-width: var(--loader-size, 48px);
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.loader__icon svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.loader__text {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 52%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
