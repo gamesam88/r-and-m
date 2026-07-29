@@ -1,0 +1,34 @@
+.character-info-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0;
+}
+
+.character-info-page__back {
+  align-self: flex-start;
+  color: var(--text-h);
+  text-decoration: none;
+}
+
+.character-info-page__back:hover {
+  text-decoration: underline;
+}
+
+.character-info-page__content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.character-info-page__back-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.character-info-page__back-content:hover {
+  text-decoration: underline;
+}
