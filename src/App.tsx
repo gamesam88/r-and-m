@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router';
-import { Header } from '@/widgets/Header/Header';
+import { Header } from '@/widgets';
 import './App.css';
 
 const App = () => {

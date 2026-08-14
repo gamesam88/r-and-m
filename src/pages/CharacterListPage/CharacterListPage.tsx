@@ -1,5 +1,5 @@
-import { Loader } from '@/shared/components/Loader/Loader';
-import rickAndMortyLogo from '@/assets/rick_and_morty.png';
+import { rickAndMortyLogo } from '@/assets';
+import { Loader } from '@/shared/components';
 import './CharacterListPage.css';
 
 export const CharacterListPage = () => {
