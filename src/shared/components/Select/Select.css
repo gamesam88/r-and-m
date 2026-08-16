@@ -1,0 +1,87 @@
+.select {
+  position: relative;
+  width: 100%;
+}
+
+.select__trigger {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  text-align: left;
+}
+
+.select__value {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.select__icon {
+  flex-shrink: 0;
+  margin-left: auto;
+  transition: transform 0.2s ease;
+}
+
+.select_size_sm .select__icon {
+  width: 10px;
+  height: 10px;
+}
+
+.select_open .select__icon {
+  transform: rotate(180deg);
+}
+
+.select__options {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  list-style: none;
+}
+
+.select__option {
+  cursor: pointer;
+}
+
+.select_size_sm .select__trigger {
+  height: 32px;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.select_size_sm .select__options {
+  top: 36px;
+}
+
+.select_size_sm .select__option {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.select_size_lg .select__trigger {
+  height: 48px;
+  padding: 18px 14px;
+  font-size: 16px;
+}
+
+.select_size_lg .select__options {
+  top: 52px;
+}
+
+.select_size_lg .select__option {
+  padding: 10px 14px;
+  font-size: 16px;
+}

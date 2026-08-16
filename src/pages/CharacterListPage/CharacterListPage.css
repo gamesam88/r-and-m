@@ -13,6 +13,13 @@
   height: auto;
 }
 
+.character-list-page__filters {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  max-width: 320px;
+}
+
 .character-list-page__container {
   flex: 1;
   display: flex;
