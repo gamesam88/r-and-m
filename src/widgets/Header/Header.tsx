@@ -1,5 +1,6 @@
 import { LogoIcon, SunIcon } from '@/assets';
-import { Button } from '@/shared/components/Button/Button';
+import { Button } from '@/shared/components';
+
 import './Header.css';
 
 export const Header = () => {

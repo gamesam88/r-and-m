@@ -1,5 +1,7 @@
 import type { CSSProperties, ReactNode } from 'react';
+
 import { PortalIcon } from '@/assets';
+
 import './Loader.css';
 
 interface ILoaderProps {

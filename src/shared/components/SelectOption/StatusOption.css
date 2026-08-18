@@ -1,0 +1,28 @@
+.status-option {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+}
+
+.status-option__label {
+  font-size: 14px;
+}
+
+.status-option__status {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.status-option__status--alive {
+  background-color: #12b800;
+}
+
+.status-option__status--dead {
+  background-color: #df0000;
+}
+
+.status-option__status--unknown {
+  background-color: #ff9900;
+}

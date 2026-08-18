@@ -1,6 +1,8 @@
 import { Link } from 'react-router';
+
 import { ArrowBackIcon } from '@/assets';
-import { Loader } from '@/shared/components/Loader/Loader';
+import { Loader } from '@/shared/components';
+
 import './CharacterInfoPage.css';
 
 export const CharacterInfoPage = () => {
