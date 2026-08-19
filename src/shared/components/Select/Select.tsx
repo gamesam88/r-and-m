@@ -7,6 +7,7 @@ import {
 } from 'react';
 
 import { ArrowDownIcon } from '@/assets/icons';
+import { classNames } from '@/shared/helpers';
 
 import './Select.css';
 
@@ -26,6 +27,7 @@ interface ISelectProps<T> {
   value: T | null;
   placeholder?: string;
   size?: TSelectSize;
+  className?: string;
   OptionComponent?: ComponentType<IOptionItemProps<T>>;
   onChange: (value: T | null) => void;
 }
@@ -39,15 +41,12 @@ export const Select = <T,>({
   value,
   placeholder = '',
   size = 'lg',
+  className,
   onChange,
   OptionComponent = DefaultOption
 }: ISelectProps<T>) => {
   const [isOpen, setIsOpen] = useState(false);
   const selectRef = useRef<HTMLDivElement>(null);
-
-  const classes = ['select', `select_size_${size}`, isOpen && 'select_open']
-    .filter(Boolean)
-    .join(' ');
 
   const selectedOption =
     value === null
@@ -84,7 +83,12 @@ export const Select = <T,>({
   return (
     <div
       ref={selectRef}
-      className={classes}
+      className={classNames(
+        'select',
+        `select_size_${size}`,
+        isOpen && 'select_open',
+        className
+      )}
     >
       <button
         type='button'

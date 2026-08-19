@@ -1,7 +1,8 @@
 import { useState } from 'react';
 
 import { rickAndMortyLogo } from '@/assets';
-import { Loader, Select, StatusOption } from '@/shared/components';
+import { SearchIcon } from '@/assets/icons';
+import { Loader, Select, StatusOption, TextField } from '@/shared/components';
 import { RACE_OPTIONS, STATUS_OPTIONS } from '@/shared/constants';
 
 import './CharacterListPage.css';
@@ -9,6 +10,8 @@ import './CharacterListPage.css';
 export const CharacterListPage = () => {
   const [status, setStatus] = useState<string | null>(null);
   const [race, setRace] = useState<string | null>(null);
+  const [search, setSearch] = useState<string>('');
+  const [name, setName] = useState<string>('');
 
   return (
     <div className='character-list-page'>
@@ -20,7 +23,20 @@ export const CharacterListPage = () => {
           height={200}
         />
       </div>
+
       <div className='character-list-page__filters'>
+        <TextField
+          value={search}
+          onChange={setSearch}
+          placeholder='Search'
+          iconLeft={<SearchIcon />}
+        />
+        <TextField
+          value={name}
+          onChange={setName}
+          placeholder='Name'
+          variant='underline'
+        />
         <Select
           options={STATUS_OPTIONS}
           value={status}

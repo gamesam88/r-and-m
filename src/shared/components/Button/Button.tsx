@@ -1,5 +1,7 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
 
+import { classNames } from '@/shared/helpers';
+
 import './Button.css';
 
 type TButtonSize = 's' | 'm' | 'l';
@@ -16,14 +18,10 @@ export const Button = ({
   type = 'button',
   ...rest
 }: IButtonProps) => {
-  const classes = ['button', `button_size_${size}`, className]
-    .filter(Boolean)
-    .join(' ');
-
   return (
     <button
       type={type}
-      className={classes}
+      className={classNames('button', `button_size_${size}`, className)}
       {...rest}
     >
       {children}
