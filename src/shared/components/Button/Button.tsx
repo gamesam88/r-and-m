@@ -21,7 +21,7 @@ export const Button = ({
   return (
     <button
       type={type}
-      className={classNames('button', `button_size_${size}`, className)}
+      className={classNames('button', `button--size-${size}`, className)}
       {...rest}
     >
       {children}

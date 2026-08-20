@@ -1,12 +1,24 @@
-type ClassNameType =
-  string | undefined | false | null | Record<string, boolean>;
+export type TClassName =
+  | string
+  | number
+  | boolean
+  | undefined
+  | null
+  | TClassName[]
+  | Record<string, boolean>;
 
-export const classNames = (...classes: ClassNameType[]) =>
-  classes
-    .flatMap((cls) => {
-      if (!cls) return [];
-      if (typeof cls === 'string') return [cls];
+const toClassNames = (input: TClassName): string[] => {
+  if (!input) return [];
+  if (typeof input === 'string' || typeof input === 'number') {
+    return [String(input)];
+  }
+  if (Array.isArray(input)) return input.flatMap(toClassNames);
+  if (typeof input === 'object') {
+    return Object.keys(input).filter((key) => input[key]);
+  }
 
-      return Object.keys(cls).filter((key) => cls[key]);
-    })
-    .join(' ');
+  return [];
+};
+
+export const classNames = (...classes: TClassName[]) =>
+  toClassNames(classes).join(' ');

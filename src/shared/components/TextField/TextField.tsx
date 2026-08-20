@@ -7,6 +7,7 @@ import './TextField.css';
 
 interface ITextFieldProps {
   value: string;
+  id: string;
   placeholder?: string;
   variant?: 'bordered' | 'underline';
   iconLeft?: ReactNode;
@@ -16,6 +17,7 @@ interface ITextFieldProps {
 
 export const TextField = ({
   value,
+  id,
   placeholder = '',
   iconLeft,
   variant = 'bordered',
@@ -25,24 +27,15 @@ export const TextField = ({
   const handleChange = (e: ChangeEvent<HTMLInputElement>) =>
     onChange(e.target.value);
 
+  const handleClear = () => onChange('');
+
   return (
     <div
-      className={classNames(
-        'text-field',
-        `text-field--${variant}`,
-        !!iconLeft && 'text-field--has-icon-left',
-        value && 'text-field--has-value',
-        className
-      )}
+      className={classNames('text-field', `text-field--${variant}`, className, {
+        'text-field--has-icon-left': !!iconLeft,
+        'text-field--has-value': !!value
+      })}
     >
-      <input
-        type='text'
-        className='text-field__input'
-        value={value}
-        onChange={handleChange}
-        placeholder={placeholder}
-      />
-
       {iconLeft && (
         <span
           className='text-field__icon-left'
@@ -52,12 +45,21 @@ export const TextField = ({
         </span>
       )}
 
+      <input
+        type='text'
+        id={id}
+        className='text-field__input'
+        value={value}
+        onChange={handleChange}
+        placeholder={placeholder}
+      />
+
       {value && (
         <button
           type='button'
           className='text-field__close-icon'
           aria-label='Clear input'
-          onClick={() => onChange('')}
+          onClick={handleClear}
         >
           <CloseIcon />
         </button>

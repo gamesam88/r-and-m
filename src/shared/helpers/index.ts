@@ -1,2 +1,1 @@
-export { classNames } from './classNames';
-
+export { classNames, type TClassName } from './classNames';

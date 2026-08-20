@@ -27,12 +27,14 @@ export const CharacterListPage = () => {
       <div className='character-list-page__filters'>
         <TextField
           value={search}
+          id='search'
           onChange={setSearch}
           placeholder='Search'
           iconLeft={<SearchIcon />}
         />
         <TextField
           value={name}
+          id='name'
           onChange={setName}
           placeholder='Name'
           variant='underline'

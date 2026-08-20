@@ -83,12 +83,9 @@ export const Select = <T,>({
   return (
     <div
       ref={selectRef}
-      className={classNames(
-        'select',
-        `select_size_${size}`,
-        isOpen && 'select_open',
-        className
-      )}
+      className={classNames('select', `select--size-${size}`, className, {
+        'select--open': isOpen
+      })}
     >
       <button
         type='button'
