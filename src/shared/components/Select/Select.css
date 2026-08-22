@@ -1,6 +1,7 @@
 .select {
   position: relative;
   width: 100%;
+  height: fit-content;
 }
 
 .select__trigger {
@@ -30,12 +31,12 @@
   transition: transform 0.2s ease;
 }
 
-.select_size_sm .select__icon {
+.select--size-sm .select__icon {
   width: 10px;
   height: 10px;
 }
 
-.select_open .select__icon {
+.select--open .select__icon {
   transform: rotate(180deg);
 }
 
@@ -56,32 +57,32 @@
   cursor: pointer;
 }
 
-.select_size_sm .select__trigger {
+.select--size-sm .select__trigger {
   height: 32px;
   padding: 5px;
   font-size: 14px;
 }
 
-.select_size_sm .select__options {
+.select--size-sm .select__options {
   top: 36px;
 }
 
-.select_size_sm .select__option {
+.select--size-sm .select__option {
   padding: 5px;
   font-size: 14px;
 }
 
-.select_size_lg .select__trigger {
+.select--size-lg .select__trigger {
   height: 48px;
   padding: 18px 14px;
   font-size: 16px;
 }
 
-.select_size_lg .select__options {
+.select--size-lg .select__options {
   top: 52px;
 }
 
-.select_size_lg .select__option {
+.select--size-lg .select__option {
   padding: 10px 14px;
   font-size: 16px;
 }
